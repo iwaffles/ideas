@@ -1,4 +1,5 @@
 class IdeasController < ApplicationController
+  before_filter :prevent_access, :only => [:edit, :update, :destroy]
   # GET /ideas
   # GET /ideas.json
   def index
@@ -79,5 +80,9 @@ class IdeasController < ApplicationController
       format.html { redirect_to ideas_url }
       format.json { head :no_content }
     end
+  end
+  
+  def prevent_access
+    redirect_to :ideas
   end
 end
