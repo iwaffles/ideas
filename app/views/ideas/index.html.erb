@@ -1,6 +1,7 @@
 <div class="row">
 	<% @ideas.each do |idea| %>
 	  <div class="span4">
+		<span id="idea-<%= idea.id %>" class="new-tag label label-warning">New</span>
 		<h1><%= idea.name %></h1>
 		<p><%= idea.description %></p>
 	  </div>
